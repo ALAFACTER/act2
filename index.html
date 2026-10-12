@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Expediente RE4: aplicación web one page dedicada a Resident Evil 4. Historia, personajes, escenarios y el maletín del mercader.">
+  <title>Expediente RE4 | Resident Evil 4</title>
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="encabezado" id="encabezado">
+    <div class="contenedor encabezado__barra">
+      <a href="#inicio" class="logo" aria-label="Expediente RE4, ir al inicio">
+        <i class="fa-solid fa-crosshairs logo__icono" aria-hidden="true"></i>
+        <span class="logo__texto">Expediente <strong>RE4</strong></span>
+      </a>
+
+      <button class="menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <nav class="menu" id="menu" aria-label="Navegación principal">
+        <ul class="menu__lista">
+          <li><a href="#inicio" class="menu__enlace activo">Inicio</a></li>
+          <li><a href="#historia" class="menu__enlace">Historia</a></li>
+          <li><a href="#personajes" class="menu__enlace">Personajes</a></li>
+          <li><a href="#galeria" class="menu__enlace">Galería</a></li>
+          <li><a href="#arsenal" class="menu__enlace">Arsenal</a></li>
+          <li><a href="#maletin" class="menu__enlace">Maletín</a></li>
+          <li><a href="#contacto" class="menu__enlace">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <!-- Coloca tu imagen real como img/hero.jpg; si no existe se usa la ilustración -->
+      <img src="img/hero.jpg" onerror="this.onerror=null;this.src='img/aldea.svg'" alt="La aldea de Resident Evil 4 de noche" class="hero__imagen">
+      <div class="hero__niebla hero__niebla--1" aria-hidden="true"></div>
+      <div class="hero__niebla hero__niebla--2" aria-hidden="true"></div>
+      <canvas class="hero__brasas" id="brasas" aria-hidden="true"></canvas>
+      <div class="hero__velo"></div>
+      <div class="laser" id="laser" aria-hidden="true"><span class="laser__punto"></span></div>
+      <div class="contenedor hero__contenido">
+        <p class="hero__fecha"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Zona rural de Europa, 2004</p>
+        <h1 class="hero__titulo">Seis años después de Raccoon City, la misión es una sola: traer de vuelta a la hija del presidente.</h1>
+        <p class="hero__texto">
+          Resident Evil 4 lleva a Leon S. Kennedy a una aldea aislada donde los habitantes ya no son del todo humanos.
+          Aquí reunimos su historia, sus personajes y los lugares que lo convirtieron en un clásico del survival horror.
+        </p>
+        <div class="hero__acciones">
+          <a href="#historia" class="boton boton--principal">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i> Leer la historia
+          </a>
+          <a href="#personajes" class="boton boton--secundario">Conocer a los personajes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HISTORIA (3 tarjetas) ===== -->
+    <section class="seccion" id="historia">
+      <div class="contenedor">
+        <header class="seccion__cabecera">
+          <h2 class="seccion__titulo">La historia en tres escenarios</h2>
+          <p class="seccion__intro">La campaña avanza por tres lugares muy distintos. Cada uno cambia el tipo de enemigo, el ritmo y la amenaza.</p>
+        </header>
+
+        <div class="historia">
+          <article class="tarjeta-lugar">
+            <img src="img/historia-aldea.jpg" onerror="this.onerror=null;this.src='img/aldea.svg'" alt="Escenario de la aldea de noche" class="tarjeta-lugar__img">
+            <div class="tarjeta-lugar__cuerpo">
+              <span class="tarjeta-lugar__acto">Primer acto</span>
+              <h3>La aldea</h3>
+              <p>Leon llega buscando a Ashley Graham y descubre que los aldeanos, los Ganados, obedecen a un culto llamado Los Iluminados.</p>
+              <p class="tarjeta-lugar__extra" hidden>
+                El jefe Bitores Méndez controla el pueblo. Aquí aparecen las primeras pistas sobre Las Plagas,
+                el parásito que convierte a las personas en seguidores obedientes del culto.
+              </p>
+              <button class="ver-mas" type="button" aria-expanded="false">
+                <span>Ver más</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="tarjeta-lugar">
+            <img src="img/historia-castillo.jpg" onerror="this.onerror=null;this.src='img/castillo.svg'" alt="Escenario de un castillo sobre un acantilado" class="tarjeta-lugar__img">
+            <div class="tarjeta-lugar__cuerpo">
+              <span class="tarjeta-lugar__acto">Segundo acto</span>
+              <h3>El castillo</h3>
+              <p>La persecución sigue dentro del castillo de Ramón Salazar, lleno de trampas, monjes del culto y pasadizos.</p>
+              <p class="tarjeta-lugar__extra" hidden>
+                Salazar, el joven castellano, sirve a Osmund Saddler. Leon debe avanzar sala por sala mientras
+                Ashley es separada de él una y otra vez.
+              </p>
+              <button class="ver-mas" type="button" aria-expanded="false">
+                <span>Ver más</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="tarjeta-lugar">
+            <img src="img/historia-isla.jpg" onerror="this.onerror=null;this.src='img/isla.svg'" alt="Escenario de una isla con instalaciones industriales y un faro" class="tarjeta-lugar__img">
+            <div class="tarjeta-lugar__cuerpo">
+              <span class="tarjeta-lugar__acto">Tercer acto</span>
+              <h3>La isla</h3>
+              <p>El tramo final ocurre en una isla militarizada donde el culto investiga y produce sus armas biológicas.</p>
+              <p class="tarjeta-lugar__extra" hidden>
+                Aquí Leon se enfrenta a soldados con Plagas y a viejos conocidos como Jack Krauser,
+                antes del enfrentamiento final contra Saddler.
+              </p>
+              <button class="ver-mas" type="button" aria-expanded="false">
+                <span>Ver más</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PERSONAJES (tarjetas + modal) ===== -->
+    <section class="seccion seccion--oscura" id="personajes">
+      <div class="contenedor">
+        <header class="seccion__cabecera">
+          <h2 class="seccion__titulo">Personajes</h2>
+          <p class="seccion__intro">Toca cualquier expediente para abrir su ficha completa.</p>
+        </header>
+
+        <div class="personajes">
+          <button class="expediente" type="button" data-personaje="leon">
+            <img src="img/leon.jpg" alt="" class="expediente__foto" onerror="this.remove()">
+            <i class="fa-solid fa-user-shield expediente__icono" aria-hidden="true"></i>
+            <span class="expediente__nombre">Leon S. Kennedy</span>
+            <span class="expediente__rol">Agente del gobierno</span>
+          </button>
+          <button class="expediente" type="button" data-personaje="ashley">
+            <img src="img/ashley.jpg" alt="" class="expediente__foto" onerror="this.remove()">
+            <i class="fa-solid fa-user-graduate expediente__icono" aria-hidden="true"></i>
+            <span class="expediente__nombre">Ashley Graham</span>
+            <span class="expediente__rol">Hija del presidente</span>
+          </button>
+          <button class="expediente" type="button" data-personaje="luis">
+            <img src="img/luis.jpg" alt="" class="expediente__foto" onerror="this.remove()">
+            <i class="fa-solid fa-flask expediente__icono" aria-hidden="true"></i>
+            <span class="expediente__nombre">Luis Sera</span>
+            <span class="expediente__rol">Investigador</span>
+          </button>
+          <button class="expediente" type="button" data-personaje="ada">
+            <img src="img/ada.jpg" alt="" class="expediente__foto" onerror="this.remove()">
+            <i class="fa-solid fa-user-secret expediente__icono" aria-hidden="true"></i>
+            <span class="expediente__nombre">Ada Wong</span>
+            <span class="expediente__rol">Espía</span>
+          </button>
+          <button class="expediente" type="button" data-personaje="saddler">
+            <img src="img/saddler.jpg" alt="" class="expediente__foto" onerror="this.remove()">
+            <i class="fa-solid fa-eye expediente__icono" aria-hidden="true"></i>
+            <span class="expediente__nombre">Osmund Saddler</span>
+            <span class="expediente__rol">Líder del culto</span>
+          </button>
+          <button class="expediente" type="button" data-personaje="krauser">
+            <img src="img/krauser.jpg" alt="" class="expediente__foto" onerror="this.remove()">
+            <i class="fa-solid fa-skull expediente__icono" aria-hidden="true"></i>
+            <span class="expediente__nombre">Jack Krauser</span>
+            <span class="expediente__rol">Exsoldado</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALERÍA INTERACTIVA ===== -->
+    <section class="seccion" id="galeria">
+      <div class="contenedor">
+        <header class="seccion__cabecera">
+          <h2 class="seccion__titulo">Galería de escenarios</h2>
+          <p class="seccion__intro">Ilustraciones de los lugares que recorre Leon. Abre cualquiera para verla en grande.</p>
+        </header>
+
+        <div class="galeria">
+          <figure class="galeria__item galeria__item--ancho">
+            <button type="button" class="galeria__boton" data-indice="0">
+              <img src="img/galeria-1.jpg" onerror="this.onerror=null;this.src='img/aldea.svg'" alt="La aldea de noche">
+            </button>
+            <figcaption>La aldea</figcaption>
+          </figure>
+          <figure class="galeria__item">
+            <button type="button" class="galeria__boton" data-indice="1">
+              <img src="img/galeria-2.jpg" onerror="this.onerror=null;this.src='img/bosque.svg'" alt="Sendero entre árboles con niebla">
+            </button>
+            <figcaption>El bosque</figcaption>
+          </figure>
+          <figure class="galeria__item">
+            <button type="button" class="galeria__boton" data-indice="2">
+              <img src="img/galeria-3.jpg" onerror="this.onerror=null;this.src='img/lago.svg'" alt="Un lago con muelle bajo la luna">
+            </button>
+            <figcaption>El lago</figcaption>
+          </figure>
+          <figure class="galeria__item">
+            <button type="button" class="galeria__boton" data-indice="3">
+              <img src="img/galeria-4.jpg" onerror="this.onerror=null;this.src='img/cabana.svg'" alt="Cabaña con una ventana iluminada en el bosque">
+            </button>
+            <figcaption>La cabaña</figcaption>
+          </figure>
+          <figure class="galeria__item">
+            <button type="button" class="galeria__boton" data-indice="4">
+              <img src="img/galeria-5.jpg" onerror="this.onerror=null;this.src='img/castillo.svg'" alt="Castillo sobre un acantilado al atardecer">
+            </button>
+            <figcaption>El castillo</figcaption>
+          </figure>
+          <figure class="galeria__item galeria__item--ancho">
+            <button type="button" class="galeria__boton" data-indice="5">
+              <img src="img/galeria-6.jpg" onerror="this.onerror=null;this.src='img/isla.svg'" alt="Isla con un faro y edificios industriales">
+            </button>
+            <figcaption>La isla</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ARSENAL (filtros + fichas) ===== -->
+    <section class="seccion seccion--oscura" id="arsenal">
+      <div class="contenedor">
+        <header class="seccion__cabecera">
+          <h2 class="seccion__titulo">Arsenal</h2>
+          <p class="seccion__intro">Las armas de Leon en el remake de 2023. Filtra por tipo y abre cualquiera para ver su ficha.</p>
+        </header>
+
+        <div class="filtros" role="group" aria-label="Filtrar armas por tipo">
+          <button type="button" class="filtro activo" data-filtro="todas" aria-pressed="true">Todas</button>
+          <button type="button" class="filtro" data-filtro="pistola" aria-pressed="false">Pistolas</button>
+          <button type="button" class="filtro" data-filtro="magnum" aria-pressed="false">Magnums</button>
+          <button type="button" class="filtro" data-filtro="escopeta" aria-pressed="false">Escopetas</button>
+          <button type="button" class="filtro" data-filtro="rifle" aria-pressed="false">Rifles</button>
+          <button type="button" class="filtro" data-filtro="subfusil" aria-pressed="false">Subfusiles</button>
+          <button type="button" class="filtro" data-filtro="especial" aria-pressed="false">Especiales</button>
+          <button type="button" class="filtro" data-filtro="cuchillo" aria-pressed="false">Cuchillos</button>
+        </div>
+
+        <p class="arsenal__contador" id="arsenalContador" aria-live="polite"></p>
+        <!-- Las tarjetas se generan desde js/app.js -->
+        <div class="arsenal" id="arsenal-lista"></div>
+      </div>
+    </section>
+
+    <!-- ===== MALETÍN DEL MERCADER ===== -->
+    <section class="seccion" id="maletin">
+      <div class="contenedor">
+        <header class="seccion__cabecera">
+          <h2 class="seccion__titulo">El maletín del mercader</h2>
+          <p class="seccion__intro">Administrar el espacio del maletín es parte del juego. Selecciona un objeto para leer qué hace.</p>
+        </header>
+
+        <div class="maletin">
+          <div class="maletin__rejilla" role="list">
+            <button type="button" class="objeto objeto--2x3" data-objeto="pistola" role="listitem"><i class="fa-solid fa-gun" aria-hidden="true"></i><span>Pistola</span></button>
+            <button type="button" class="objeto objeto--1x2" data-objeto="hierba" role="listitem"><i class="fa-solid fa-leaf" aria-hidden="true"></i><span>Hierba</span></button>
+            <button type="button" class="objeto objeto--1x2" data-objeto="spray" role="listitem"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i><span>Spray</span></button>
+            <button type="button" class="objeto objeto--2x2" data-objeto="granada" role="listitem"><i class="fa-solid fa-bomb" aria-hidden="true"></i><span>Granada</span></button>
+            <button type="button" class="objeto objeto--2x2" data-objeto="mira" role="listitem"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i><span>Mira</span></button>
+            <button type="button" class="objeto objeto--2x1" data-objeto="pesetas" role="listitem"><i class="fa-solid fa-coins" aria-hidden="true"></i><span>Pesetas</span></button>
+            <button type="button" class="objeto objeto--1x1" data-objeto="joya" role="listitem"><i class="fa-solid fa-gem" aria-hidden="true"></i><span>Joya</span></button>
+            <button type="button" class="objeto objeto--1x1" data-objeto="llave" role="listitem"><i class="fa-solid fa-key" aria-hidden="true"></i><span>Llave</span></button>
+          </div>
+
+          <aside class="maletin__ficha" id="fichaObjeto" aria-live="polite">
+            <figure class="maletin__captura">
+              <img src="img/maletin.jpg" alt="El maletín dentro del juego, con armas, munición y objetos acomodados en la rejilla">
+              <figcaption>Así se ve el maletín dentro del juego</figcaption>
+            </figure>
+            <i class="fa-solid fa-briefcase maletin__ficha-icono" aria-hidden="true"></i>
+            <h3 class="maletin__ficha-titulo">Elige un objeto</h3>
+            <p class="maletin__ficha-texto">El mercader compra tesoros y vende armas y mejoras. Cada objeto ocupa un espacio distinto en el maletín.</p>
+          </aside>
+        </div>
+
+        <!-- Tarjetas de datos destacados -->
+        <div class="datos">
+          <article class="dato">
+            <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+            <h3>Lanzamiento original</h3>
+            <p>Salió en 2005 para GameCube y después llegó a casi todas las plataformas.</p>
+          </article>
+          <article class="dato">
+            <i class="fa-solid fa-video" aria-hidden="true"></i>
+            <h3>Cámara sobre el hombro</h3>
+            <p>Su cámara en tercera persona detrás del personaje influyó en muchos juegos de acción posteriores.</p>
+          </article>
+          <article class="dato">
+            <i class="fa-solid fa-rotate" aria-hidden="true"></i>
+            <h3>Remake de 2023</h3>
+            <p>Capcom lo reconstruyó con gráficos actuales, más contenido de historia y un sistema de parada con cuchillo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="seccion" id="contacto">
+      <div class="contenedor contacto">
+        <div class="contacto__info">
+          <h2 class="seccion__titulo">Deja tu reporte</h2>
+          <p>¿Cuál es tu personaje favorito o qué parte del juego te dio más miedo? Envíanos un mensaje y lo agregamos al expediente.</p>
+          <ul class="contacto__lista">
+            <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> expediente.re4@ejemplo.com</li>
+            <li><i class="fa-solid fa-users" aria-hidden="true"></i> Proyecto de equipo, Unidad 1</li>
+          </ul>
+        </div>
+
+        <form class="formulario" id="formulario" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre">
+            <small class="campo__error" aria-live="polite"></small>
+          </div>
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" autocomplete="email" placeholder="tu@correo.com">
+            <small class="campo__error" aria-live="polite"></small>
+          </div>
+          <div class="campo">
+            <label for="favorito">Personaje favorito</label>
+            <select id="favorito" name="favorito">
+              <option value="">Selecciona uno</option>
+              <option>Leon S. Kennedy</option>
+              <option>Ashley Graham</option>
+              <option>Luis Sera</option>
+              <option>Ada Wong</option>
+              <option>El mercader</option>
+            </select>
+            <small class="campo__error" aria-live="polite"></small>
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos tu experiencia con el juego"></textarea>
+            <small class="campo__error" aria-live="polite"></small>
+          </div>
+          <button type="submit" class="boton boton--principal">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar reporte
+          </button>
+          <p class="formulario__exito" id="formularioExito" role="status" hidden>
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Reporte enviado. Gracias por sumarte al expediente.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="pie">
+    <div class="contenedor pie__contenido">
+      <div>
+        <a href="#inicio" class="logo">
+          <i class="fa-solid fa-crosshairs logo__icono" aria-hidden="true"></i>
+          <span class="logo__texto">Expediente <strong>RE4</strong></span>
+        </a>
+        <p class="pie__nota">Sitio de fans con fines educativos. Resident Evil es una marca de Capcom. Las imágenes del juego pertenecen a sus respectivos dueños.</p>
+      </div>
+      <nav aria-label="Enlaces del pie">
+        <ul class="pie__enlaces">
+          <li><a href="#historia">Historia</a></li>
+          <li><a href="#personajes">Personajes</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#arsenal">Arsenal</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="pie__redes">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+    <p class="pie__copy">&copy; <span id="anio"></span> Expediente RE4. Desarrollo Web, Unidad 1.</p>
+  </footer>
+
+  <!-- ===== MODAL DE PERSONAJE ===== -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__fondo" data-cerrar></div>
+    <div class="modal__caja" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+      <button class="modal__cerrar" type="button" aria-label="Cerrar ficha" data-cerrar>
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <img src="" alt="" class="modal__foto" id="modalFoto" hidden>
+      <img src="" alt="" class="modal__arma" id="modalArma" hidden>
+      <i class="fa-solid fa-user modal__icono" id="modalIcono" aria-hidden="true"></i>
+      <h3 class="modal__titulo" id="modalTitulo">Nombre</h3>
+      <p class="modal__rol" id="modalRol">Rol</p>
+      <p class="modal__texto" id="modalTexto">Descripción</p>
+      <dl class="modal__datos" id="modalDatos"></dl>
+    </div>
+  </div>
+
+  <!-- ===== VISOR DE GALERÍA ===== -->
+  <div class="visor" id="visor" hidden>
+    <button class="visor__cerrar" type="button" aria-label="Cerrar galería"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="visor__nav visor__nav--prev" type="button" aria-label="Imagen anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <figure class="visor__figura">
+      <img src="" alt="" id="visorImg">
+      <figcaption id="visorTexto"></figcaption>
+    </figure>
+    <button class="visor__nav visor__nav--next" type="button" aria-label="Imagen siguiente"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

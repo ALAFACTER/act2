@@ -1,0 +1,46 @@
+EXPEDIENTE RE4 - COMO AGREGAR IMAGENES REALES DEL JUEGO
+========================================================
+
+Copia tus imagenes dentro de la carpeta img/ con EXACTAMENTE estos nombres
+(en minusculas y con extension .jpg). La pagina las usa automaticamente.
+Si alguna falta, se muestra la ilustracion de respaldo y nada se rompe.
+
+INICIO (fondo animado)
+  hero.jpg            Imagen horizontal grande, idealmente 1920x1080.
+                      Funciona mejor una escena oscura (la aldea de noche).
+
+HISTORIA (3 tarjetas)
+  historia-aldea.jpg
+  historia-castillo.jpg
+  historia-isla.jpg   Horizontales, aprox. 1280x800.
+
+GALERIA (6 imagenes, en este orden)
+  galeria-1.jpg       La aldea      (se muestra ancha)
+  galeria-2.jpg       El bosque
+  galeria-3.jpg       El lago
+  galeria-4.jpg       La cabana
+  galeria-5.jpg       El castillo
+  galeria-6.jpg       La isla       (se muestra ancha)
+  Horizontales, aprox. 1600x900. Pueden poner otras escenas, solo
+  cambien el texto de <figcaption> en index.html.
+
+PERSONAJES (foto en el expediente y en la ventana de detalle)
+  leon.jpg  ashley.jpg  luis.jpg  ada.jpg  saddler.jpg  krauser.jpg
+  Aprox. 800x600. Se recorta desde arriba, asi que encuadren la cara.
+
+CONSEJOS
+- La mejor opcion: capturas tomadas por ustedes jugando (tecla de captura
+  de la consola o de Steam). Tambien sirven las imagenes de prensa
+  oficiales de Capcom.
+- Comprime las imagenes (por ejemplo en squoosh.app) para que pesen
+  menos de 300 KB y la pagina cargue rapido.
+- Si su imagen es .png o .webp, conviertanla a .jpg o cambien la
+  extension en index.html.
+- Agreguen en el pie de pagina el credito de las imagenes si su profesor
+  lo pide.
+
+ARSENAL
+  Las 20 armas ya estan en img/armas/ (recortadas y sin el boton "Atras").
+  Para agregar otra: guarda su imagen en img/armas/ y agrega una linea
+  en la lista "armas" de js/app.js con su id (nombre del archivo sin .jpg),
+  nombre, tipo, texto y "destaca".
